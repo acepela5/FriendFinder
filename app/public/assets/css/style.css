@@ -1,0 +1,51 @@
+body {
+    background-image: url("../images/background.jpg");
+    background-size: 100%; 
+    background-repeat: no-repeat;
+}
+
+#icon {
+    position: absolute;
+    left: 530px;
+    top: 5px;
+}
+
+#logo {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+    font-size: 50px;
+}
+
+#intro {
+    position: relative;
+    left: 400px;
+    background-color: #95eec3;
+    border-radius: 4px;
+    width: 600px;
+}
+
+p, span, label {
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: black;
+    font-size: 25px;
+}
+
+form{
+    position: relative;
+    left: 400px;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+#submitBtn {
+    position: relative;
+    left: 400px;
+    margin-bottom: 20px;
+}
+
+.row {
+    position: relative;
+    left: 200px;
+}

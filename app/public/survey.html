@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Survey</title>
+
+    <link rel="icon" href="./assets/images/icons8-friends-50.png" type="image/x-icon">
+
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- Link to Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav>
+        <div class="nav-wrapper green accent-2">
+            <img id="icon" src="./assets/images/icons8-friends-50.png">
+            <a id="logo" href="#" class="brand-logo center green accent-2">FriendFinder</a>
+        </div>
+    </nav>
+
+    <div class="row">
+            <form class="col s12 l5">
+              <div class="row">
+                <div class="input-field col s12">
+                  <textarea id="name" class="materialize-textarea"></textarea>
+                  <label for="name">Name</label>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="row">
+                <form class="col s12 l5">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <textarea id="photo" class="materialize-textarea"></textarea>
+                      <label for="photo">URL Link to Photo Image</label>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+    <form action="#">
+        <p id="questionDisplay">1.) When you need an afternoon pick-me-up, you reach for a<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Mocha Latte</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Decaf Coffee</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Green Tea</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Hot Chocolate</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Non-fat Cappucino</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Black Coffee</span>
+            </label>
+        </p>
+        <p id="questionDisplay">2.) In your free time, you're most to be found<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>At the mall</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>At the comedy club</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Deep in meditation</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>At a new restaurant</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>In the kitchen</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>At the museum</span>
+            </label>
+        </p>
+        <p id="questionDisplay">3.) Everyone who knows you knows you are obsessed with<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Fashion</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Humor</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Crystals</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Food</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Cleaning</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Knowledge</span>
+            </label>
+        </p>
+        <p id="questionDisplay">4.) Your ideal pet is<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>A hairless cat</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>A duck</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Anything in need of a home</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Baby chick</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>No pets, they're too messy</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>A monkey</span>
+            </label>
+        </p>
+        <p id="questionDisplay">5.) The best thing about you is your<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Hair</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Jokes</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Selfless-ness</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Face</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Ability to cook</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Brain</span>
+            </label>
+        </p>
+        <p id="questionDisplay">6.) On vaction, you have to<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Get a tan by the pool</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Hit the bar up</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Meet new people</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Eat ALL THE FOOD</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Trade recipies with the chef</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Attend a scientific conference</span>
+            </label>
+        </p>
+        <p id="questionDisplay">7.) Your catchphrase is<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>"Noooooo"</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>"Oh my god!"</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>"Oh no"</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>"How you doin'?"</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>"I know"</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>"Hi"</span>
+            </label>
+        </p>
+        <p id="questionDisplay">8.) Your favorite color is<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Pink</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Red</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Blue</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Yellow</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Orange</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Green</span>
+            </label>
+        </p>
+        <p id="questionDisplay">9.) Your ideal career would involve<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Clothes</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Communcation with the masses</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Soothing people's souls</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Being someone else</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Cooking</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Science</span>
+            </label>
+        </p>
+        <p id="questionDisplay">10.) You look to your friends for<br>
+            <label>
+                <input type="checkbox" id="1" />
+                <span>Advice</span>
+            </label>
+            <label>
+                <input type="checkbox" id="2" />
+                <span>Cheering up</span>
+            </label>
+            <label>
+                <input type="checkbox" id="3" />
+                <span>Sympathy</span>
+            </label>
+            <label>
+                <input type="checkbox" id="4" />
+                <span>Food</span>
+            </label>
+            <label>
+                <input type="checkbox" id="5" />
+                <span>Competition</span>
+            </label>
+            <label>
+                <input type="checkbox" id="6" />
+                <span>Support</span>
+            </label>
+        </p>
+        
+    </form>
+
+
+    <button class="btn waves-effect waves-light green accent-2" id="submitBtn" type="submit" name="action">Submit
+        <i class="material-icons right">send</i>
+    </button>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/survey.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
