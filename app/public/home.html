@@ -25,25 +25,47 @@
             <nav>
                 <div class="nav-wrapper green accent-2">
                     <img id="icon" src="./assets/images/icons8-friends-50.png">
-                  <a id="logo" href="#" class="brand-logo center green accent-2">FriendFinder</a>
+                  <a id="logo" href="./" class="brand-logo center green accent-2">FriendFinder</a>
                 </div>
               </nav>
 
               <div id="intro">
               <p>Answer a few personality questions and find friends in your area!</p>
 
-              <button class="btn waves-effect waves-light green accent-2" id="submitBtn" type="submit" name="action">Survey
+              <button onclick="window.location.href='./survey.html'" class="btn waves-effect waves-light green accent-2 btn-large" id="startBtn" type="button" name="action">Survey
                     <i class="material-icons right">question_answer</i>
                 </button>
             </div>
-    
-<!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="./assets/survey.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>    
+            <div id="slideshow">
+              <div>
+                  <img id="slideshowPic" src="./assets/images/bonding.jpg">
+                </div>
+                <div>  
+                <img id="slideshowPic" src="./assets/images/handcircle.jpg">
+              </div>
+              <div>
+                <img id="slideshowPic" src="./assets/images/ipad.jpg">
+              </div>
+              <div> 
+                <img id="slideshowPic" src="./assets/images/celebrate.jpg">
+             </div>
+            </div>
+
+    
+<footer>
+  <div class="container">
+    <p><a href="/api/survey">API Survey Data</a> </p>
+  </div>
+</footer>
+
+            <script
+            src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+            crossorigin="anonymous"></script> 
+             <!-- Compiled and minified JavaScript -->
+             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+            <script src="./assets/survey.js"></script>
 </body>
 </html>

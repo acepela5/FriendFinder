@@ -2,53 +2,39 @@ $(document).ready(function(){
 
     console.log("JS linked");
 
-var questionArr = [
-    {
-        question: "When you need an afternoon pick-me-up, you reach for",
-        answers: [
-            "Mocha Latte",
-            "Decaf Coffe",
-            "Green Tea",
-            "Cappucino",
-            "Non-fat Cappucino",
-            "Black Coffee"
-        ],
-        assignedValue: [
-            1,
-            2,
-            3,
-            4,
-            5,
-            6
-        ]
-    }
-];
+    $("#slideshow > div:gt(0)").hide();
 
-var index = 0;
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+}, 3000);
+    
+function runSurveyQuery(){
+    $.ajax({ url: "/api/survey", method: "GET"})
+.then(function(friendData){
+console.log(`${friendData}
+-------------------------------`);
 
-function showQuestion(questionArr, index){
-    // event.preventDefault();
-
-    $('#questionDisplay').html(questionArr[index].question);
-
-    var answerBoxes = $(`
-    <label>
-    <input type="checkbox" id="userResponse"/>
-    <span>${questionArr[index].answers}</span><br>
-    </label>`);
-
-    $('#answerDisplay').html(answerBoxes)
+})
 
 };
+runSurveyQuery();
 
-showQuestion();
-
-$('#submitBtn').on('click', function(){
-    console.log("clicked");
-
-    // var userResponse = $('#userResponse');
-
-    // index++;
-});
-
+$("#submitBtn").on("click", function(event){
+    event.preventDefault;
+    var newFriend = {
+        name: $("#name").val().trim(),
+        photo: $("#photo").val().trim(),
+        scores: [],
+    }
+        $.post("/survey", newFriend).then(function(serverData){
+            console.log(serverData);
+            alert("added")
+        })
+    
+})
 });
