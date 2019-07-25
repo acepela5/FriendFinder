@@ -6,9 +6,10 @@ module.exports = function(app){
     });
 
     app.post("/api/survey", function(request, response){
-        friendData.length = 0;
+        console.log("post survey back", request.body)
+       // friendData.length = 0;
 
-        response.json({ok:true});
+        //response.json({ok:true});
 
         var userInputMessageBodyObject = request.body;
         var totalDifference = 0;
@@ -19,7 +20,7 @@ module.exports = function(app){
         for(var i = 0; i < friendData.length; i++){
             totalDifference = 0;
             for(var j = 0; j < userInputMessageBodyObject; j++){
-                result = parseFloat(friendData[i].scores[j]) - parseFloat(userInputMessageBodyObject.scores[j])
+                result = Math.abs(friendData[i].scores[j] - userInputMessageBodyObject.scores[j])
                 totalDifference += Math.abs(result)
             }
             newArrayWithTotalDifference.push({

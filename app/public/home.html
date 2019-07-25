@@ -1,71 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Friend Finder</title>
-    
-    <link rel="icon" href="./assets/images/icons8-friends-50.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Friend Finder</title>
 
-    <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="./assets/images/icons8-friends-50.png" type="image/x-icon">
 
-       <!-- Compiled and minified CSS -->
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-       <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-       <!-- Link to Icons-->
-       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-       <!-- Link to Google Fonts -->
-       <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
-   
+  <link rel="stylesheet" href="./css/style.css">
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <!-- Link to Icons-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
 </head>
+
 <body>
-        
-            <nav>
-                <div class="nav-wrapper green accent-2">
-                    <img id="icon" src="./assets/images/icons8-friends-50.png">
-                  <a id="logo" href="./" class="brand-logo center green accent-2">FriendFinder</a>
-                </div>
-              </nav>
 
-              <div id="intro">
-              <p>Answer a few personality questions and find friends in your area!</p>
+  <nav>
+    <div class="nav-wrapper green accent-2">
+      <img id="icon" src="./assets/images/icons8-friends-50.png">
+      <a id="logo" href="./" class="brand-logo center green accent-2">FriendFinder</a>
+    </div>
+  </nav>
 
-              <button onclick="window.location.href='./survey.html'" class="btn waves-effect waves-light green accent-2 btn-large" id="startBtn" type="button" name="action">Survey
-                    <i class="material-icons right">question_answer</i>
-                </button>
-            </div>
+  <div id="intro">
+    <p>Answer a few personality questions and find friends in your area!</p>
 
-            <div id="slideshow">
-              <div>
-                  <img id="slideshowPic" src="./assets/images/bonding.jpg">
-                </div>
-                <div>  
-                <img id="slideshowPic" src="./assets/images/handcircle.jpg">
-              </div>
-              <div>
-                <img id="slideshowPic" src="./assets/images/ipad.jpg">
-              </div>
-              <div> 
-                <img id="slideshowPic" src="./assets/images/celebrate.jpg">
-             </div>
-            </div>
-
-    
-<footer>
-  <div class="container">
-    <p><a href="/api/survey">API Survey Data</a> </p>
+    <button onclick="window.location.href='./survey.html'" class="btn waves-effect waves-light green accent-2 btn-large"
+      id="startBtn" type="button" name="action">Survey
+      <i class="material-icons right">question_answer</i>
+    </button>
   </div>
-</footer>
 
-            <script
-            src="https://code.jquery.com/jquery-3.4.1.min.js"
-            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script> 
-             <!-- Compiled and minified JavaScript -->
-             <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-            <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
-            <script src="./assets/survey.js"></script>
+  <div id="slideshow">
+    <div>
+      <img id="slideshowPic" src="./assets/images/bonding.jpg">
+    </div>
+    <div>
+      <img id="slideshowPic" src="./assets/images/handcircle.jpg">
+    </div>
+    <div>
+      <img id="slideshowPic" src="./assets/images/ipad.jpg">
+    </div>
+    <div>
+      <img id="slideshowPic" src="./assets/images/celebrate.jpg">
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="container">
+      <p><a href="/api/survey">API Survey Data</a> </p>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+ 
+  <script>
+      $("#slideshow > div:gt(0)").hide();
+
+    setInterval(function () {
+        $('#slideshow > div:first')
+            .fadeOut(1000)
+            .next()
+            .fadeIn(1000)
+            .end()
+            .appendTo('#slideshow');
+    }, 3000);
+  </script>
 </body>
+
 </html>
