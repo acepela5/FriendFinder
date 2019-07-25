@@ -21,7 +21,7 @@ module.exports = function(app){
             totalDifference = 0;
             for(var j = 0; j < userInputMessageBodyObject; j++){
                 result = Math.abs(friendData[i].scores[j] - userInputMessageBodyObject.scores[j])
-                totalDifference += Math.abs(result)
+                // totalDifference += Math.abs(result)
             }
             newArrayWithTotalDifference.push({
                 friendData: friendData[i].name,

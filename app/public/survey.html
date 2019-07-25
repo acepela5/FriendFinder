@@ -328,9 +328,9 @@
             <p>
                 <a href="/api/home">Home Page</a>
             </p>
-        </div>
-        <div class="container">
-            <p><a href="/api/survey">API Survey Data</a> </p>
+            <p>
+                <a href="/api/survey">API Survey Data</a>
+            </p>
         </div>
     </footer>
 
@@ -338,38 +338,64 @@
 
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    
+
     <script>
+
+function runSurveyQuery() {
+        $.ajax({ url: "/api/survey", method: "GET" })
+            .then(function (friendData) {
+                console.log(`${friendData}-------------------------------`);
+
+            })
+
+    };
+
         $("#submitBtn").on("click", function (event) {
             event.preventDefault();
             console.log("submit clicked")
             var scores = $("input:checked")
             var scoresArray = []
             console.log(scores.length)
+
             if (scores.length < 10) {
-                alert("please fill of responses and submit again")
+                alert("Please fill all of the responses and submit again.")
 
             }
             else {
                 for (var i = 0; i < scores.length; i++) {
-                    console.log(scores[i].name)
+                    // console.log(scores[i].name)
                     // scoresArray.push([scores[i].name, scores[i].value])
+
                     scoresArray.push([scores[i].value])
 
+                    // console.log(scores[i].value)  
+                    console.log(scoresArray, 'this is scoreArray') 
+            //       var flatArray = Array.prototype.concat(...scores[i].value);
+            // console.log(flatArray); 
+            var userValue = scores[i].value   
+            // var userValueArray = $.merge(userValue) 
+            // console.log(userValueArray)            
                 }
-                console.log(scoresArray)
-                var newFriend = {
-                    name: $("#name").val().trim(),
-                    photo: $("#photo").val().trim(),
-                    scores: scoresArray
-                }
-                console.log(newFriend)
-                $.post("/api/survey", newFriend, function (serverData) {
-                    //open modal and return serverData
-                    //show modal button
-                    console.log(serverData);
-                    console.log("added")
-                })
+
+                console.log(scoresArray, 'this is after loop') 
+
+                // console.log(scores, 'scores ')
+
+
+                // console.log(scoresArray)
+                // var newFriend = {
+                //     name: $("#name").val().trim(),
+                //     photo: $("#photo").val().trim(),
+                //     // scores: scoresArray
+                //     scores: flatArray
+                // }
+                // console.log(newFriend)
+                // $.post("/api/survey", newFriend, function (serverData) {
+                //     //open modal and return serverData
+                //     //show modal button
+                //     console.log(serverData);
+                //     console.log("added")
+                // })
             }
 
         })

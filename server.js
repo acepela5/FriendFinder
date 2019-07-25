@@ -12,7 +12,7 @@ require("./app/routing/htmlRoutes")(app);
 
 app.use(express.static(__dirname + '/public'));
 
-require("./routing/htmlRoutes")(app)
+//require("./routing/htmlRoutes")(app)
 
 app.listen(PORT, function(){
     console.log("Listening on PORT: ", PORT);
