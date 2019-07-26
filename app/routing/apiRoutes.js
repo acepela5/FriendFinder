@@ -7,11 +7,10 @@ module.exports = function(app){
 
     app.post("/api/survey", function(request, response){
         console.log("post survey back", request.body)
-       // friendData.length = 0;
 
-        //response.json({ok:true});
-
-        var userInputMessageBodyObject = request.body;
+        var userInputMessageBodyObject = request.body.scores;
+        console.log('score', request.body.scores);
+        
         var totalDifference = 0;
         var result = 0;
 
@@ -19,9 +18,9 @@ module.exports = function(app){
         
         for(var i = 0; i < friendData.length; i++){
             totalDifference = 0;
-            for(var j = 0; j < userInputMessageBodyObject; j++){
-                result = Math.abs(friendData[i].scores[j] - userInputMessageBodyObject.scores[j])
-                // totalDifference += Math.abs(result)
+            for(var j = 0; j < userInputMessageBodyObject.length; j++){
+                result = Math.abs(friendData[i].scores[j] - userInputMessageBodyObject[j])
+                totalDifference += Math.abs(result)
             }
             newArrayWithTotalDifference.push({
                 friendData: friendData[i].name,
@@ -35,6 +34,9 @@ module.exports = function(app){
         newArrayWithTotalDifference.sort(function(a, b){
             return a.totalDifference - b.totalDifference
         })
+
+   
+
 
         console.log(newArrayWithTotalDifference)
 

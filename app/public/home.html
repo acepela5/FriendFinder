@@ -9,7 +9,7 @@
 
   <link rel="icon" href="./assets/images/icons8-friends-50.png" type="image/x-icon">
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 
   <!-- Compiled and minified CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -25,35 +25,20 @@
 
   <nav>
     <div class="nav-wrapper green accent-2">
-      <img id="icon" src="./assets/images/icons8-friends-50.png">
-      <a id="logo" href="./" class="brand-logo center green accent-2">FriendFinder</a>
+      <a id="logo" href="/" class="brand-logo center green accent-2">FriendFinder</a>
     </div>
   </nav>
 
   <div id="intro">
-    <p>Answer a few personality questions and find friends in your area!</p>
+    <h1>Answer a few personality questions and find friends in your area!</h1>
 
-    <button onclick="window.location.href='./survey.html'" class="btn waves-effect waves-light green accent-2 btn-large"
+    <button onclick="window.location.href='/survey'" class="btn waves-effect waves-light green accent-2 btn-large"
       id="startBtn" type="button" name="action">Survey
       <i class="material-icons right">question_answer</i>
     </button>
   </div>
 
-  <div id="slideshow">
-    <div>
-      <img id="slideshowPic" src="./assets/images/bonding.jpg">
-    </div>
-    <div>
-      <img id="slideshowPic" src="./assets/images/handcircle.jpg">
-    </div>
-    <div>
-      <img id="slideshowPic" src="./assets/images/ipad.jpg">
-    </div>
-    <div>
-      <img id="slideshowPic" src="./assets/images/celebrate.jpg">
-    </div>
-  </div>
-
+  
 
   <footer>
     <div class="container">
@@ -67,16 +52,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
  
   <script>
-      $("#slideshow > div:gt(0)").hide();
-
-    setInterval(function () {
-        $('#slideshow > div:first')
-            .fadeOut(1000)
-            .next()
-            .fadeIn(1000)
-            .end()
-            .appendTo('#slideshow');
-    }, 3000);
+    
   </script>
 </body>
 

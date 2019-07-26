@@ -24,7 +24,6 @@
 <body>
     <nav>
         <div class="nav-wrapper green accent-2">
-            <img id="icon" src="./assets/images/icons8-friends-50.png">
             <a id="logo" href="#" class="brand-logo center green accent-2">FriendFinder</a>
         </div>
     </nav>
@@ -323,6 +322,20 @@
         <i class="material-icons right">send</i>
     </button>
 
+    <!-- Modal Trigger -->
+  <a id="modalBtn" class="waves-effect waves-light btn modal-trigger" href="#modal1">Click To See Your New Friend!</a>
+
+  <!-- Modal Structure -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4>Your New Friend Is.....</h4>
+      <p></p>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Go Meet Your New Bestie</a>
+    </div>
+  </div>
+
     <footer>
         <div class="container">
             <p>
@@ -341,13 +354,27 @@
 
     <script>
 
+$('.modal').modal();
+
+$(".modal").hide();
+
 function runSurveyQuery() {
+    $("#modalBtn").show();
         $.ajax({ url: "/api/survey", method: "GET" })
             .then(function (friendData) {
                 console.log(`${friendData}-------------------------------`);
+            
+            for(var i = 0; i < friendData.length; i++){
+                var friendList = $("#modal1");
 
-            })
+                var listItem = $("<li class='list-group-item mt-4'>");
 
+                 listItem.append(`Friend Name: ${friendData[i].name}
+                        Picture: ${friendData[i].photo}`);
+
+                friendList.append(listItem);
+            }
+        })
     };
 
         $("#submitBtn").on("click", function (event) {
@@ -363,42 +390,39 @@ function runSurveyQuery() {
             }
             else {
                 for (var i = 0; i < scores.length; i++) {
-                    // console.log(scores[i].name)
-                    // scoresArray.push([scores[i].name, scores[i].value])
-
-                    scoresArray.push([scores[i].value])
-
-                    // console.log(scores[i].value)  
-                    console.log(scoresArray, 'this is scoreArray') 
-            //       var flatArray = Array.prototype.concat(...scores[i].value);
-            // console.log(flatArray); 
-            var userValue = scores[i].value   
-            // var userValueArray = $.merge(userValue) 
-            // console.log(userValueArray)            
+                    scoresArray.push(scores[i].value)
                 }
 
-                console.log(scoresArray, 'this is after loop') 
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: scoresArray
+                }
+                console.log(newFriend)
+                $.post("/api/survey", newFriend, function (serverData) {
+                    
+                    console.log(serverData);
+                    console.log("added")
 
-                // console.log(scores, 'scores ')
+                    var friendList = $("#modal1");
 
+                    friendList.empty();
 
-                // console.log(scoresArray)
-                // var newFriend = {
-                //     name: $("#name").val().trim(),
-                //     photo: $("#photo").val().trim(),
-                //     // scores: scoresArray
-                //     scores: flatArray
-                // }
-                // console.log(newFriend)
-                // $.post("/api/survey", newFriend, function (serverData) {
-                //     //open modal and return serverData
-                //     //show modal button
-                //     console.log(serverData);
-                //     console.log("added")
-                // })
+                    var listItem = $("<li class='list-group-item mt-4'>");
+
+                    listItem.append(`Friend Name: ${serverData.friendData} 
+                            Picture: ${serverData.photo}`);
+
+                    friendList.append(listItem);
+
+                    $('.modal').modal();
+    
+                })
             }
 
         })
+
+        runSurveyQuery();
     </script>
 
 
