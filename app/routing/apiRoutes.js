@@ -6,10 +6,8 @@ module.exports = function(app){
     });
 
     app.post("/api/survey", function(request, response){
-        console.log("post survey back", request.body)
 
         var userInputMessageBodyObject = request.body.scores;
-        console.log('score', request.body.scores);
         
         var totalDifference = 0;
         var result = 0;
@@ -28,8 +26,7 @@ module.exports = function(app){
                 photo: friendData[i].photo
             })
         }
-
-        friendData.push(userInputMessageBodyObject);
+        friendData.push(request.body);
 
         newArrayWithTotalDifference.sort(function(a, b){
             return a.totalDifference - b.totalDifference

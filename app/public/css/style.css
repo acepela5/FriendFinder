@@ -7,8 +7,10 @@ body {
 
 #icon {
     position: absolute;
-    left: 530px;
+    left: 520px;
     top: 5px;
+    height: 60px;
+    width: 60px;
 }
 
 #logo {
@@ -19,17 +21,15 @@ body {
 
 #intro {
     position: relative;
-    left: 200px;
+    left: 150px;
     top: 70px;
-    background-color: #95eec3;
-    border-radius: 4px;
     width: 530px;
-    padding: 3px;    
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 
 #startBtn {
     position: absolute;
-    right: 190px;
+    right: -300px;
     top: 130px;
 }
 
@@ -51,39 +51,81 @@ form{
     margin-bottom: 20px;
 }
 
+#modalBtn {
+    position: relative;
+    left: 500px;
+    top: -10px;
+}
+
 .row {
     position: relative;
     left: 200px;
 }
 
-#slideshow {
-    margin: 80px auto;
+#homeFoot {
     position: relative;
-    width: 340px;
-    height: 340px;
-    padding: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    border-radius: 3px;
-    left: 400px;
-    top: -70px;
-  }
-  
-  #slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-  }
+      top: 150px;
+      right: -50px;
+}
 
-  #slideshowPic {
-      height: 320px;
-      width: 320px;
-      border-radius: 3px;
-  }
-  
   footer {
       position: relative;
-      bottom: 80px;
+      top: 100px;
       right: 10px;
   }
+
+img {
+height: 250px;
+width: 200px;
+}  
+
+@media screen and (max-width: 920px){
+    #icon{
+        left: 250px;
+    }
+    #startBtn{
+        left: 350px;
+    }
+    form{
+        left: 50px;
+    }
+    .row{
+        left: 10px;
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    #icon{
+        left: 180px;
+    }   
+    #submitBtn{
+        left: 50px;
+    } 
+    .row {
+        width: 500px;
+        left: -20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    #icon{
+        left: 70px;
+        height: 50px;
+    }
+    #intro{
+        left: 20px;
+        width: 200px;
+        top: 0px;
+    }    
+    #startBtn{
+        left: 250px;
+    }
+    form{
+        left: 0px;
+    }
+    .row{
+        left: 0px;
+        width: 450px;
+    }
+}

@@ -24,6 +24,7 @@
 <body>
     <nav>
         <div class="nav-wrapper green accent-2">
+        <img id="icon" src="/assets/images/icons8-friends-50.png">
             <a id="logo" href="#" class="brand-logo center green accent-2">FriendFinder</a>
         </div>
     </nav>
@@ -54,8 +55,7 @@
     <form action="#">
         <p id="questionDisplay">1.) When you need an afternoon pick-me-up, you reach for a<br>
             <label>
-                <!-- find button that is checked and then grab value -->
-                <!-- adding values instead of id -->
+              
                 <input type="radio" value="1" name="q1" />
                 <span>Mocha Latte</span>
             </label>
@@ -325,25 +325,32 @@
     <!-- Modal Trigger -->
   <a id="modalBtn" class="waves-effect waves-light btn modal-trigger" href="#modal1">Click To See Your New Friend!</a>
 
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Your New Friend Is.....</h4>
-      <p></p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Go Meet Your New Bestie</a>
+
+
+  <div class="modal" id="modal1" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Your New Friend Is....</h5>
+          <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"> -->
+            <!-- <span aria-hidden="true">&times;</span> -->
+          </button>
+        </div>
+        <div class="modal-body">
+          <p></p>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
     </div>
   </div>
 
     <footer>
         <div class="container">
             <p>
-                <a href="/api/home">Home Page</a>
+                <a href="/">Home Page</a>
             </p>
-            <p>
-                <a href="/api/survey">API Survey Data</a>
-            </p>
+            
         </div>
     </footer>
 
@@ -356,36 +363,33 @@
 
 $('.modal').modal();
 
-$(".modal").hide();
 
 function runSurveyQuery() {
-    $("#modalBtn").show();
+    $("#modalBtn").hide();
         $.ajax({ url: "/api/survey", method: "GET" })
             .then(function (friendData) {
                 console.log(`${friendData}-------------------------------`);
             
-            for(var i = 0; i < friendData.length; i++){
-                var friendList = $("#modal1");
-
-                var listItem = $("<li class='list-group-item mt-4'>");
-
-                 listItem.append(`Friend Name: ${friendData[i].name}
-                        Picture: ${friendData[i].photo}`);
-
-                friendList.append(listItem);
-            }
         })
     };
 
+   
+        runSurveyQuery();
+
+
+
+
         $("#submitBtn").on("click", function (event) {
+            $('#modalBtn').show();
+
             event.preventDefault();
-            console.log("submit clicked")
             var scores = $("input:checked")
             var scoresArray = []
             console.log(scores.length)
 
             if (scores.length < 10) {
                 alert("Please fill all of the responses and submit again.")
+                $('#modalBtn').hide();
 
             }
             else {
@@ -398,31 +402,30 @@ function runSurveyQuery() {
                     photo: $("#photo").val().trim(),
                     scores: scoresArray
                 }
-                console.log(newFriend)
+                
                 $.post("/api/survey", newFriend, function (serverData) {
+
                     
-                    console.log(serverData);
-                    console.log("added")
+                    var listItem  = $("<ul>");
 
-                    var friendList = $("#modal1");
+            
 
-                    friendList.empty();
+                     listItem.append( "<li class='list-group-item mt-4'>");
 
-                    var listItem = $("<li class='list-group-item mt-4'>");
+                    listItem.append("Your New Friend is: " ,serverData.friendData, "\n")
+                    listItem.append("<img src='/"+serverData.photo+"' />")
+                    console.log("server data", serverData, "<----->")
 
-                    listItem.append(`Friend Name: ${serverData.friendData} 
-                            Picture: ${serverData.photo}`);
+                  
 
-                    friendList.append(listItem);
-
-                    $('.modal').modal();
+                    $('.modal-body').append(listItem);
+                    $('#modal1').modal("show");
     
                 })
             }
 
         })
 
-        runSurveyQuery();
     </script>
 
 
