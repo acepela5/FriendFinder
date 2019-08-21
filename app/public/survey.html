@@ -380,6 +380,8 @@ function runSurveyQuery() {
 
 
         $("#submitBtn").on("click", function (event) {
+            $(".modal-body").empty();
+
             $('#modalBtn').show();
 
             event.preventDefault();
